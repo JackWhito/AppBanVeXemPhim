@@ -80,18 +80,13 @@ public class BillActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        //ZALO PAY
-//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//        StrictMode.setThreadPolicy(policy);
-//        ZaloPaySDK.init(2553, Environment.SANDBOX);
-        if (Constant.user != null){
+        if (Constant.user != null) {
             getData();
             loadWidgets();
             loadData();
             createBill();
             addEvents();
-        }
-        else{
+        } else {
             Toast.makeText(this, "Bạn cần đăng nhập trước", Toast.LENGTH_SHORT).show();
             finish();
         }
@@ -103,7 +98,7 @@ public class BillActivity extends AppCompatActivity {
         bill.setCreate_date(dateFormat.format(new Date()));
         bill.setPrice(Constant.calculateTotal(tickets, service));
         bill.setState(0);
-        bill.setPayment(Constant.payment.ZALOPAY.ordinal());
+        bill.setPayment(Constant.payment.MOMO.ordinal());
         BillDAO.getInstance(this).insert(bill);
         bill = BillDAO.getInstance(this).getLastBill();
         if (service != null)
@@ -123,10 +118,9 @@ public class BillActivity extends AppCompatActivity {
                 //TODO: Thêm event thanh toán
                 if (rdgPayment.getCheckedRadioButtonId() == R.id.rdbZALOPAY) {
                     openZALOPAY();
-                }else if(rdgPayment.getCheckedRadioButtonId() == R.id.rdbMoMo){
+                } else if (rdgPayment.getCheckedRadioButtonId() == R.id.rdbMoMo) {
                     openMoMoPay();
-                }
-                else{
+                } else {
                     Toast.makeText(BillActivity.this, "Lỗi thanh toán", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -140,10 +134,11 @@ public class BillActivity extends AppCompatActivity {
     }
 
     private void openZALOPAY() {
-        Toast.makeText(BillActivity.this,"Thanh toán ZaloPay",Toast.LENGTH_SHORT).show();
+        Toast.makeText(BillActivity.this, "Thanh toán ZaloPay", Toast.LENGTH_SHORT).show();
     }
-    private void openMoMoPay(){
-        Toast.makeText(BillActivity.this,"Thanh toán MoMo",Toast.LENGTH_SHORT).show();
+
+    private void openMoMoPay() {
+        Toast.makeText(BillActivity.this, "Thanh toán MoMo", Toast.LENGTH_SHORT).show();
     }
 
     @SuppressLint("SetTextI18n")
@@ -178,6 +173,7 @@ public class BillActivity extends AppCompatActivity {
         tvTotal = (TextView) findViewById(R.id.tvTotal);
         rdgPayment = (RadioGroup) this.findViewById(R.id.rdbPayment);
     }
+
     private void getData() {
         Intent i = getIntent();
         Bundle b = i.getBundleExtra("Data");
@@ -188,11 +184,5 @@ public class BillActivity extends AppCompatActivity {
         service = (Service) b.getSerializable("service");
         tickets = (ArrayList<Ticket>) b.getSerializable("tickets");
 
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        ZaloPaySDK.getInstance().onResult(intent);
     }
 }
