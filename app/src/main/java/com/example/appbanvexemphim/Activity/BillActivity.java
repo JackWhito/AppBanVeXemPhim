@@ -81,9 +81,9 @@ public class BillActivity extends AppCompatActivity {
             return insets;
         });
         //ZALO PAY
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        ZaloPaySDK.init(2553, Environment.SANDBOX);
+//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//        StrictMode.setThreadPolicy(policy);
+//        ZaloPaySDK.init(2553, Environment.SANDBOX);
         if (Constant.user != null){
             getData();
             loadWidgets();
@@ -123,7 +123,10 @@ public class BillActivity extends AppCompatActivity {
                 //TODO: Thêm event thanh toán
                 if (rdgPayment.getCheckedRadioButtonId() == R.id.rdbZALOPAY) {
                     openZALOPAY();
-                } else {
+                }else if(rdgPayment.getCheckedRadioButtonId() == R.id.rdbMoMo){
+                    openMoMoPay();
+                }
+                else{
                     Toast.makeText(BillActivity.this, "Lỗi thanh toán", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -137,72 +140,10 @@ public class BillActivity extends AppCompatActivity {
     }
 
     private void openZALOPAY() {
-        CreateOrder orderApi = new CreateOrder();
-
-        try {
-            JSONObject data = orderApi.createOrder(Integer.parseInt(Constant.calculateTotal(tickets, service).toString().split("\\.")[0])+"");
-            String code = data.getString("return_code");
-
-            if (code.equals("1")) {
-                String token = data.getString("zp_trans_token");
-                ZaloPaySDK.getInstance().payOrder(BillActivity.this, token, "demozpdk://app", new PayOrderListener() {
-                    @Override
-                    public void onPaymentSucceeded(final String transactionId, final String transToken, final String appTransID) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                new AlertDialog.Builder(BillActivity.this)
-                                        .setTitle("Payment Success")
-                                        .setMessage(String.format("TransactionId: %s - TransToken: %s", transactionId, transToken))
-                                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                Toast.makeText(BillActivity.this, "Thanh toán thành công", Toast.LENGTH_SHORT).show();
-                                            }
-                                        })
-                                        .setNegativeButton("Cancel", null).show();
-                            }
-
-                        });
-                    }
-
-                    @Override
-                    public void onPaymentCanceled(String zpTransToken, String appTransID) {
-                        new AlertDialog.Builder(BillActivity.this)
-                                .setTitle("User Cancel Payment")
-                                .setMessage(String.format("zpTransToken: %s \n", zpTransToken))
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        Toast.makeText(BillActivity.this, "Thanh toán thành công", Toast.LENGTH_SHORT).show();
-                                    }
-                                })
-                                .setNegativeButton("Cancel", null).show();
-                    }
-
-                    @Override
-                    public void onPaymentError(ZaloPayError zaloPayError, String zpTransToken, String appTransID) {
-                        new AlertDialog.Builder(BillActivity.this)
-                                .setTitle("Payment Fail")
-                                .setMessage(String.format("ZaloPayErrorCode: %s \nTransToken: %s", zaloPayError.toString(), zpTransToken))
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                    }
-                                })
-                                .setNegativeButton("Cancel", null).show();
-                    }
-                });
-
-                bill.setPayment(Constant.payment.ZALOPAY.ordinal());
-                bill.setState(1);
-                BillDAO.getInstance(this).update(bill);
-                Toast.makeText(BillActivity.this, "Thanh toán thành công", Toast.LENGTH_SHORT).show();
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Toast.makeText(BillActivity.this,"Thanh toán ZaloPay",Toast.LENGTH_SHORT).show();
+    }
+    private void openMoMoPay(){
+        Toast.makeText(BillActivity.this,"Thanh toán MoMo",Toast.LENGTH_SHORT).show();
     }
 
     @SuppressLint("SetTextI18n")
@@ -237,7 +178,6 @@ public class BillActivity extends AppCompatActivity {
         tvTotal = (TextView) findViewById(R.id.tvTotal);
         rdgPayment = (RadioGroup) this.findViewById(R.id.rdbPayment);
     }
-
     private void getData() {
         Intent i = getIntent();
         Bundle b = i.getBundleExtra("Data");
@@ -248,36 +188,6 @@ public class BillActivity extends AppCompatActivity {
         service = (Service) b.getSerializable("service");
         tickets = (ArrayList<Ticket>) b.getSerializable("tickets");
 
-    }
-
-    public void openVNPAY() {
-        Intent intent = new Intent(this, VNP_AuthenticationActivity.class);
-        intent.putExtra("url", "https://sandbox.vnpayment.vn/testsdk/"); //bắt buộc, VNPAY cung cấp
-        intent.putExtra("tmn_code", "FAHASA03"); //bắt buộc, VNPAY cung cấp
-        intent.putExtra("scheme", "resultactivity"); //bắt buộc, scheme để mở lại app khi có kết quả thanh toán từ mobile banking
-        intent.putExtra("is_sandbox", false); //bắt buộc, true <=> môi trường test, true <=> môi trường live
-        VNP_AuthenticationActivity.setSdkCompletedCallback(new VNP_SdkCompletedCallback() {
-            @Override
-            public void sdkAction(String action) {
-                Log.wtf("SplashActivity", "action: " + action);
-                //action == AppBackAction
-                //Người dùng nhấn back từ sdk để quay lại
-
-                //action == CallMobileBankingApp
-                //Người dùng nhấn chọn thanh toán qua app thanh toán (Mobile Banking, Ví...)
-                //lúc này app tích hợp sẽ cần lưu lại cái PNR, khi nào người dùng mở lại app tích hợp thì sẽ gọi kiểm tra trạng thái thanh toán của PNR Đó xem đã thanh toán hay chưa.
-
-                //action == WebBackAction
-                //Người dùng nhấn back từ trang thanh toán thành công khi thanh toán qua thẻ khi url có chứa: cancel.sdk.merchantbackapp
-
-                //action == FaildBackAction
-                //giao dịch thanh toán bị failed
-
-                //action == SuccessBackAction
-                //thanh toán thành công trên webview
-            }
-        });
-        startActivity(intent);
     }
 
     @Override

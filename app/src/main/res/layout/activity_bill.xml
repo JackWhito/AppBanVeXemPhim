@@ -146,6 +146,7 @@
             android:layout_weight="1"
             android:background="@color/white"
             android:orientation="vertical">
+
             <!-- RadioButton VNPAY -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,6 +168,27 @@
                     android:text="ZALO PAY"
                     android:textColor="@color/black" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_payment_momo" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:text="MoMo"
+                    android:textColor="@color/black" />
+            </LinearLayout>
         </LinearLayout>
 
         <RadioGroup
@@ -180,6 +202,13 @@
                 android:id="@+id/rdbZALOPAY"
                 android:layout_width="match_parent"
                 android:layout_height="60dp" />
+
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/rdbMoMo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+
 
         </RadioGroup>
     </FrameLayout>

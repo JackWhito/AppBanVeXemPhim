@@ -125,7 +125,7 @@ public class MovieDAO extends DBHelper {
     @SuppressLint("Recycle")
     public ArrayList<Integer> getCinemaIdByShowAndMovie(int movie_id, Date date){
         ArrayList<Integer> movies = new ArrayList<>();
-        String sql = "SELECT DISTINCT cinema_id FROM viewShowByCinema WHERE movie_id = ? AND datetime like ?";
+        String sql = "SELECT DISTINCT threater_id FROM viewShowByCinema WHERE movie_id = ? AND datetime like ?";
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         String str = "%" + calendar.get(Calendar.DAY_OF_MONTH) + "/" + (calendar.get(Calendar.MONTH)+1) + "/" + calendar.get(Calendar.YEAR) + "%";

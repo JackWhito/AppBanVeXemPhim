@@ -8,30 +8,24 @@ INSERT INTO payment (name) VALUES ('MOMO');
 -- Thêm dữ liệu vào bảng bill
 INSERT INTO bill (user_id, create_date, price, state, payment, service_id) 
 VALUES 
-(1, '16/04/2024', 130000, 1, 1, 1),
-(1, '16/04/2024', 115000, 1, 2, 2),
-(2, '16/04/2024', 100000, 1, 1, 3);
+(1, '20/05/2024', 130000, 1, 1, 1);
+INSERT INTO bill (user_id, create_date, price, state, payment, service_id)
+VALUES (1, '21/05/2024', 115000, 1, 2, 2);
+INSERT INTO bill (user_id, create_date, price, state, payment, service_id)
+VALUES (2, '22/05/2024', 100000, 1, 1, 3);
 
-INSERT INTO cinema (name, address) 
-VALUES ('Quang Trung galaxy', 'Địa chỉ của Quang Trung galaxy');
 
-INSERT INTO threater (name, cinema_id) 
+
+INSERT INTO threater (name, cinema_id)
 VALUES ('Rạp 1', 1);
 
-INSERT INTO "show" (movie_id, threater_id, datetime) 
-VALUES (1, 1, '25/04/2024 15:30:00');
-
-INSERT INTO ticket (show_id, seatName, price, state) 
-VALUES 
-    (1, 'A1', 80000, 1),
-    (1, 'A2', 80000, 1),
-    (1, 'A3', 80000, 1);
 	
 INSERT INTO trans (bill_id, ticket_id)
-VALUES
-(1, 1),
-(1, 2),
-(2, 3);
+VALUES (1, 1);
+INSERT INTO trans (bill_id, ticket_id)
+VALUES (1, 2);
+INSERT INTO trans (bill_id, ticket_id)
+VALUES (2, 3);
 
 INSERT INTO notify (title, content, user_id)
 VALUES 
@@ -46,7 +40,8 @@ AS
 	SELECT ticket.id, show_id, seatName, price, state, bill_id
 	FROM trans INNER JOIN ticket
 	ON trans.ticket_id = ticket.id;
-	
+
+
 	
 CREATE VIEW viewHistories
 AS

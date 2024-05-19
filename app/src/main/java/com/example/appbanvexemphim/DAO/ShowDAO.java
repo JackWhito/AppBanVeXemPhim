@@ -30,7 +30,7 @@ public class ShowDAO extends DBHelper {
     @SuppressLint("Range")
     public ArrayList<Show> getShowByCinema(int cinema_id, int movie_id, Date date) {
         ArrayList<Show> shows = new ArrayList<>();
-        String sql = "SELECT * FROM viewShowByCinema WHERE cinema_id = ? AND movie_id = ? AND datetime like ? ORDER BY datetime";
+        String sql = "SELECT * FROM viewShowByCinema WHERE threater_id = ? AND movie_id = ? AND datetime like ? ORDER BY datetime";
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         String str = "%" + calendar.get(Calendar.DAY_OF_MONTH) + "/" + (calendar.get(Calendar.MONTH)+1) + "/" + calendar.get(Calendar.YEAR) + "%";
