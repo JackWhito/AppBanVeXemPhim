@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quản lý Đánh giá"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Danh sách Bộ Phim -->
+    <ListView
+        android:id="@+id/listViewReview"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Layout cho việc thêm/cập nhật Bộ Phim -->
+    <LinearLayout
+        android:id="@+id/layoutAddEditReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"> <!-- Ẩn layout khi không cần thiết -->
+
+        <EditText
+            android:id="@+id/editTextReviewUserID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User ID" />
+
+        <EditText
+            android:id="@+id/editTextReviewMovieID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Movie ID" />
+
+        <EditText
+            android:id="@+id/editTextReviewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tiêu đề" />
+
+        <EditText
+            android:id="@+id/editTextReviewContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nội dung" />
+
+        <EditText
+            android:id="@+id/editTextReviewPicture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Image source" />
+
+        <!-- Nút Lưu -->
+        <Button
+            android:id="@+id/buttonSaveReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Lưu" />
+
+        <!-- Nút Hủy -->
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hủy" />
+
+        <!-- Nút Xóa -->
+        <Button
+            android:id="@+id/buttonDeleteReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Xóa" />
+    </LinearLayout>
+
+    <!-- Nút Thêm Bộ Phim Mới -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonAddReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Thêm đánh giá" />
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Cancel" />
+    </LinearLayout>
+</LinearLayout>

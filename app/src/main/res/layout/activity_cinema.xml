@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_size"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <ImageButton
+            android:id="@+id/ibtnBack"
+            android:layout_width="@dimen/actionbar_size"
+            android:layout_height="@dimen/actionbar_size"
+            android:background="@drawable/button_white"
+            android:src="@drawable/ic_back"
+            tools:ignore="ContentDescription,Suspicious0dp" />
+
+        <TextView
+            android:id="@+id/tvCinema"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/actionbar_size"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:text="[Rạp phim]"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            tools:ignore="HardcodedText,InefficientWeight" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/hsvCinema"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/llDatetimePicker"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/date_item_height"
+            android:divider="@drawable/divider_line"
+            android:orientation="horizontal"
+            tools:ignore="ScrollViewSize">
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <ListView
+        android:id="@+id/lvMovie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

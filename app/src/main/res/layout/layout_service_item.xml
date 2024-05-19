@@ -1,0 +1,57 @@
+<!-- res/layout/combo_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@drawable/button_service">
+
+    <!-- Hình ảnh combo -->
+    <ImageView
+        android:id="@+id/comboImageView"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_combo_image" />
+
+    <!-- Thông tin combo -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp">
+
+        <!-- Tên combo -->
+        <TextView
+            android:id="@+id/comboNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Combo Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <!-- Mô tả combo -->
+        <TextView
+            android:id="@+id/comboDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_weight="1"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginBottom="4dp"/>
+
+        <!-- Giá combo -->
+        <TextView
+            android:id="@+id/comboPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Layout hiển thị thông tin giao dịch -->
+    <LinearLayout
+        android:id="@+id/layout_movie_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView_movie_poster"
+            android:layout_width="149dp"
+            android:layout_height="148dp"
+            android:src="@drawable/default_movie_image" />
+
+        <LinearLayout
+            android:layout_width="228dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/movieTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Title"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/movieOldTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Old"
+                android:textColor="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/movieTimeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Time"
+                android:textColor="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/movieDateTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Date"
+                android:textColor="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/movieGenreTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Genre"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_transaction_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/layout_movie_details"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+            <TextView
+                android:id="@+id/textView_ticket_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Số lượng vé: 2" />
+            <TextView
+                android:id="@+id/textView_ticket_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" x100,000 đồng" />
+        </LinearLayout>
+
+        <!-- TextView hiển thị loại combo và giá tiền combo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_combo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Combo: Popcorn + Nước ngọt" />
+            <TextView
+                android:id="@+id/textView_combo_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="x50,000 đồng" />
+        </LinearLayout>
+
+        <!-- Các TextView khác để hiển thị thông tin khác về giao dịch -->
+    </LinearLayout>
+
+    <!-- Layout hiển thị tổng tiền -->
+    <LinearLayout
+        android:id="@+id/layout_total_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/layout_transaction_info"
+        android:gravity="end"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tổng cộng: "
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Layout chọn phương thức thanh toán -->
+
+    <LinearLayout
+        android:id="@+id/layout_payment_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/layout_total_amount"
+        android:padding="16dp">
+        <RadioGroup
+            android:id="@+id/radioGroup_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButton_credit_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VnPay" />
+
+            <RadioButton
+                android:id="@+id/radioButton_debit_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thẻ ghi nợ" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_payment_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_payment_method"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView_total_amount_bottom"
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:text="Tổng cộng: "
+            android:textAlignment="viewStart"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button_confirm_payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thanh toán" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tiêu đề -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:text="Quản lý Lịch sử"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Danh sách Rạp Phim -->
+    <ListView
+        android:id="@+id/listViewHistory"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"/>
+
+    <!-- Layout để thêm/cập nhật rạp phim -->
+    <LinearLayout
+        android:id="@+id/layoutAddEditHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="visible"> <!-- Ẩn layout khi không cần thiết -->
+
+        <EditText
+            android:id="@+id/editTextHistoryUserID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User ID" />
+
+        <EditText
+            android:id="@+id/editTextCreateDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Create Date" />
+
+        <EditText
+            android:id="@+id/editTextPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price" />
+
+        <EditText
+            android:id="@+id/editTextState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="State" />
+
+        <EditText
+            android:id="@+id/editTextPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Payment" />
+
+        <EditText
+            android:id="@+id/editTextServiceID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Service" />
+
+        <Button
+            android:id="@+id/buttonSaveHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Lưu" />
+
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hủy" />
+
+        <Button
+            android:id="@+id/buttonDeleteHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Xóa" />
+    </LinearLayout>
+
+    <!-- Nút để hiển thị layout thêm rạp phim mới -->
+
+    <Button
+        android:id="@+id/buttonAddHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Thêm lịch sử" />
+
+    <Button
+        android:id="@+id/btncancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Cancel" />
+
+</LinearLayout>

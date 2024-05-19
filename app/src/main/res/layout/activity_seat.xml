@@ -1,0 +1,101 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TBShowtimes"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="*"
+    android:padding="5dp"
+    android:background="#FFFFFF">
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C6E2FF">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:id="@+id/txtDate"/>
+
+        <TextView
+            android:id="@+id/txtshowTime"
+            android:layout_width="101dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+    </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black" />
+    <TextView android:background="#C6E2FF"
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtName"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="Phim:"
+        android:textSize="20dp"
+        android:paddingTop="10dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@android:color/black" />
+    <TextView android:background="#B5B5B5"
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCREEN"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:paddingTop="5dp"/>
+
+    <GridView
+        android:id="@+id/grid_view_seats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F8F8FF"
+        android:gravity="center"
+        android:numColumns="6"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:verticalSpacing="5dp"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/black" />
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Tổng:"
+            android:textColor="#FF3300"
+            android:textSize="20sp"
+            android:id="@+id/txtTong"
+            />
+
+        <Button
+            android:id="@+id/button_book_tickets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Next"
+            android:textStyle="bold" />
+    </TableRow>
+</TableLayout>

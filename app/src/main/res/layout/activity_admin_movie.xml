@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quản lý Phim"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Danh sách Bộ Phim -->
+    <ListView
+        android:id="@+id/listViewMovies"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Layout cho việc thêm/cập nhật Bộ Phim -->
+    <LinearLayout
+        android:id="@+id/layoutAddEditMovie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"> <!-- Ẩn layout khi không cần thiết -->
+
+        <!-- Trường nhập Tên Bộ Phim -->
+        <EditText
+            android:id="@+id/editTextMovieName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên Bộ Phim" />
+
+        <!-- Trường nhập Thời Lượng -->
+        <EditText
+            android:id="@+id/editTextMovieDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Thời Lượng (phút)" />
+
+        <!-- Trường nhập Ảnh -->
+        <EditText
+            android:id="@+id/editTextMovieImageResource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="resource Ảnh" />
+
+        <!-- Trường nhập Tuổi Tối Thiểu -->
+        <EditText
+            android:id="@+id/editTextMovieRequireAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tuổi Tối Thiểu" />
+
+        <!-- Trường nhập ID Thể Loại -->
+        <EditText
+            android:id="@+id/editTextMovieTypeId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Thể Loại" />
+
+        <!-- Trường nhập Mô Tả -->
+        <EditText
+            android:id="@+id/editTextMovieDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mô Tả" />
+
+        <!-- Trường nhập Đánh Giá -->
+        <EditText
+            android:id="@+id/editTextMovieRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Đánh Giá" />
+
+        <!-- Nút Lưu -->
+        <Button
+            android:id="@+id/buttonSaveMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Lưu" />
+
+        <!-- Nút Hủy -->
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hủy" />
+
+        <!-- Nút Xóa -->
+        <Button
+            android:id="@+id/buttonDeleteMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Xóa" />
+    </LinearLayout>
+
+    <!-- Nút Thêm Bộ Phim Mới -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonAddMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Thêm Bộ Phim" />
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Cancel" />
+    </LinearLayout>
+</LinearLayout>

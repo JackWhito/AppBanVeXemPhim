@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AdminActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:paddingStart="20dp"
+            android:text="Quản trị"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,InefficientWeight,RtlSymmetry" />
+
+        <ImageButton
+            android:id="@+id/ibtnBackAdmin"
+            android:layout_width="@dimen/actionbar_size"
+            android:layout_height="@dimen/actionbar_size"
+            android:background="@color/white"
+            android:src="@drawable/ic_back" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/tvAdminCinema"
+        android:background="@drawable/textview_white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Rạp phim"
+        android:layout_margin="2dp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/tvAdminMovie"
+        android:background="@drawable/textview_white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Phim"
+        android:layout_margin="2dp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/tvAdminShow"
+        android:background="@drawable/textview_white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Xuất chiếu"
+        android:layout_margin="2dp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/tvAdminService"
+        android:background="@drawable/textview_white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Dịch vụ"
+        android:layout_margin="2dp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/tvAdminHistory"
+        android:background="@drawable/textview_white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Lịch sử giao dịch"
+        android:layout_margin="2dp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/tvAdminReview"
+        android:background="@drawable/textview_white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Đánh giá"
+        android:layout_margin="2dp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/tvAdminNotify"
+        android:background="@drawable/textview_white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Thông báo"
+        android:layout_margin="2dp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/tvAdminUser"
+        android:background="@drawable/textview_white"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Người dùng"
+        android:layout_margin="2dp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        tools:ignore="HardcodedText,SpUsage" />
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/date_item_width"
+    android:layout_height="@dimen/date_item_height"
+    android:background="@drawable/button_datepicker"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="@dimen/date_item_width"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="[Thứ]"
+        android:textColor="@drawable/button_datepicker_text"
+        android:textSize="13sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="@dimen/date_item_width"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="[Ngày]"
+        android:textColor="@drawable/button_datepicker_text"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText" />
+</LinearLayout>

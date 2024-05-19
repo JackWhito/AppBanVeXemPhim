@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quản lý Dịch vụ"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Danh sách Dịch vụ -->
+    <ListView
+        android:id="@+id/listViewServices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Layout cho việc thêm hoặc cập nhật Dịch vụ -->
+    <LinearLayout
+        android:id="@+id/layoutAddEditService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"> <!-- Ẩn layout khi không cần thiết -->
+
+        <!-- Trường nhập Tên Dịch vụ -->
+        <EditText
+            android:id="@+id/editTextServiceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên Dịch vụ" />
+
+        <!-- Trường nhập Mô tả -->
+        <EditText
+            android:id="@+id/editTextServiceDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mô tả" />
+
+        <!-- Trường nhập Giá -->
+        <EditText
+            android:id="@+id/editTextServicePrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Giá (VND)"
+            android:inputType="numberDecimal" />
+
+        <!-- Trường nhập Hình ảnh -->
+        <EditText
+            android:id="@+id/editTextServiceImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Hình ảnh" />
+
+        <!-- Nút Lưu -->
+        <Button
+            android:id="@+id/buttonSaveService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lưu" />
+
+        <!-- Nút Hủy -->
+        <Button
+            android:id="@+id/buttonCancelService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hủy" />
+
+        <!-- Nút Xóa -->
+        <Button
+            android:id="@+id/buttonDeleteService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xóa"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+    <!-- Nút Thêm Dịch vụ mới -->
+    <Button
+        android:id="@+id/buttonAddService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm Dịch vụ"
+        android:layout_marginTop="16dp" />
+    <Button
+        android:id="@+id/btncancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Cancel" />
+</LinearLayout>

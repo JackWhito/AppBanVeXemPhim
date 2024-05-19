@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tiêu đề -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:text="Quản lý Xuất Chiếu"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Danh sách Rạp Phim -->
+    <ListView
+        android:id="@+id/listViewShows"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"/>
+
+    <!-- Layout để thêm/cập nhật rạp phim -->
+    <LinearLayout
+        android:id="@+id/layoutAddEditShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="invisible"> <!-- Ẩn layout khi không cần thiết -->
+
+        <EditText
+            android:id="@+id/editTextMovieID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID phim" />
+
+        <EditText
+            android:id="@+id/editTextTheaterID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID rạp" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ngày" />
+
+        <!-- Nút để lưu thông tin rạp phim -->
+        <Button
+            android:id="@+id/buttonSaveShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Lưu" />
+
+        <!-- Nút hủy bỏ thêm/cập nhật -->
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hủy" />
+
+        <!-- Nút để xóa rạp phim -->
+        <Button
+            android:id="@+id/buttonDeleteShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Xóa" />
+    </LinearLayout>
+
+    <!-- Nút để hiển thị layout thêm rạp phim mới -->
+
+        <Button
+            android:id="@+id/buttonAddShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Thêm xuất chiếu" />
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Cancel" />
+
+</LinearLayout>

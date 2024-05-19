@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginHorizontal="5sp"
+        android:layout_marginVertical="10sp"
+        tools:ignore="ContentDescription" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:paddingVertical="5sp"
+        >
+
+        <TextView
+            android:id="@+id/tvNotifyItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="[Tiêu đề]"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:gravity="fill_vertical"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvNotifyItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nội dung"
+            android:textSize="16sp"
+            android:paddingStart="5sp"
+            android:layout_weight="4"
+            tools:ignore="HardcodedText,RtlSymmetry" />
+    </LinearLayout>
+
+</LinearLayout>

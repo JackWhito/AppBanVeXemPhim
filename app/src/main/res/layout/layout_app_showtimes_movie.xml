@@ -1,0 +1,85 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/TBShowtimes"
+    android:stretchColumns="*"
+    android:padding="16dp">
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5">
+
+        <TextView
+            android:id="@+id/date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_vertical" />
+
+        <ImageButton
+            android:id="@+id/previous_day_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:onClick="showPreviousDay"
+            android:contentDescription="Previous Day"
+            android:src="@drawable/prev" />
+
+        <ImageButton
+            android:id="@+id/next_day_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="Next Day"
+            android:onClick="showNextDay"
+            android:src="@drawable/next" />
+    </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        />
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="List Showtimes:"
+
+            android:textSize="20sp" />
+    </TableRow>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EEEEEE"
+            android:text="Select Theater"
+            android:textColor="#000000"
+            android:editable="false" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listTime"
+        android:background="@android:color/transparent"
+        android:textSize="16sp"
+        android:textColor="#000000" />
+
+
+</TableLayout>

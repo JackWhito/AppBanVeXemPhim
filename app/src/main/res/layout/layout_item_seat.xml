@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnSeat"
+    android:textColor="@drawable/button_seat_text"
+    android:text="A1"
+    android:background="@drawable/button_seat"
+    tools:ignore="HardcodedText">
+</Button>
