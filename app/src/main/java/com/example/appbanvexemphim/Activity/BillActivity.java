@@ -135,10 +135,16 @@ public class BillActivity extends AppCompatActivity {
 
     private void openZALOPAY() {
         Toast.makeText(BillActivity.this, "Thanh toán ZaloPay", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(BillActivity.this,MainActivity.class);
+        startActivity(i);
+        finish();
     }
 
     private void openMoMoPay() {
         Toast.makeText(BillActivity.this, "Thanh toán MoMo", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(BillActivity.this,MainActivity.class);
+        startActivity(i);
+        finish();
     }
 
     @SuppressLint("SetTextI18n")
